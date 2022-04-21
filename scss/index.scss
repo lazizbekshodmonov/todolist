@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1440px;
+    height: 100vh;
+    position: relative;
+    .bg__image{
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        max-height: 300px;
+        min-height: 200px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(225deg, #5596FF 0%, #AC2DEB 100%);
+        img{
+            min-width: 1440;
+        }
+    }
+    .todo__list{
+        width: 540px;
+        margin-top: 70px;
+        .todo__header{
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            height: 48px;
+            .title{
+                font-family: 'Josefin Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 40px;
+                letter-spacing: 15px;
+                color: #FFFFFF;
+            }
+            .dark__white{
+                cursor: pointer;
+            }
+        }
+        .create__todo{
+            height: 64px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 40px;
+            padding-left: 24px;
+            background-color: #fff;
+            box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+            border-radius: 5px;
+            .check__oval{
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 24px;
+                    background: #FFFFFF;
+                    border: 1px solid #E3E4F1;
+                    border-radius: 50%;
+            }
+            input{
+                width: 80%;
+                border: none;
+                outline: none;
+                font-family: 'Josefin Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 18px;
+                letter-spacing: -0.25px;
+                color: #9495A5;
+            }
+        }
+        .todo__content{
+            width: 100%;
+            max-height: 540px;
+            margin-top: 24px;
+            background: #FFFFFF;
+            box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+            border-radius: 5px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+            .content{
+                .todo__item{
+                    width: 100%;
+                    height: 64px;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding-left: 24px;
+                    background-color: #fff;
+                    border-bottom: 1px solid #E3E4F1;
+                    cursor: pointer;
+                    .todo__checkbox{
+                            width: 24px;
+                            height: 24px;
+                            margin-right: 25px;
+                            z-index: 999;
+                            border: 1px solid #E3E4F1;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            cursor: pointer;
+                        .checkbox{
+                            width: 25px;
+                            height: 25px;
+                            // opacity: 0;
+                            outline: none;
+                            border-radius: 50%;
+                            cursor: pointer;
+                        }
+                    }    
+                    .todo__text{
+                        font-family: 'Josefin Sans';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 18px;
+                        letter-spacing: -0.25px;
+                        color: #494C6B;
+                    }
+                }
+            }
+            .content__footer{
+                height: 64px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 24px;
+                background-color: #fff;
+                .content__number, .clear{
+                    font-family: 'Josefin Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 14px;
+                    text-align: right;
+                    letter-spacing: -0.194444px;
+                    color: #9495A5;
+                }
+                .clear{
+                    cursor: pointer;
+                }
+                .todo__categories{
+                    display: grid;
+                    grid-gap: 18px;
+                    grid-template-columns: auto auto auto;
+                    .all, .active, .completed{
+                        list-style-type: none;
+                        font-family: 'Josefin Sans';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 14px;
+                        letter-spacing: -0.194444px;
+                        color: #9495A5;
+                        cursor: pointer;
+                    }
+                }
+            }
+            
+        }
+    }
+    .drop__to__reoder{
+        position: absolute;
+        bottom: 52px;
+        width: 100%;
+        text-align: center;
+        font-family: 'Josefin Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        text-align: center;
+        letter-spacing: -0.194444px;
+        color: #9495A5;
+    }
+}
