@@ -1,26 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap');
-// :root {
-//     //while
-//     --todo-item-color: #ffffff;
-//     //--todo-item-color: #25273D;
-//     --background: #F2F2F2;
-//     //background: #171823;
-//     --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
-//     //dark: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
-//     --text-color: #494C6B;
-//     //color: #C8CBE7;
-//     --input-color: #393A4B;
-//     //color: #C8CBE7;
-//     --completed-text-color: #D1D2DA;
-//     //color: #4D5067;
-//     --border-color: #E3E4F1;
-//     //background: #393A4B;
-//     --hover-color: #494C6B;
-//     //color: #E3E4F1;
-//     --footer-text-color: #9495A5;
-//     //color: #5B5E7E;
-//     --active-color: #3A7CFD;
-// }
+:root {
+    //     //while
+    //     --todo-item-color: #ffffff;
+    //     //--todo-item-color: #25273D;
+    //     --background: #F2F2F2;
+    //     //background: #171823;
+    //     --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+    //     //dark: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+    //     --text-color: #494C6B;
+    //     //color: #C8CBE7;
+    //     --input-color: #393A4B;
+    //     //color: #C8CBE7;
+    //     --completed-text-color: #D1D2DA;
+    //     //color: #4D5067;
+    //     --border-color: #E3E4F1;
+    //     //background: #393A4B;
+    //     --hover-color: #494C6B;
+    //     //color: #E3E4F1;
+    //     --footer-text-color: #9495A5;
+    //     //color: #5B5E7E;
+    //     --active-color: #3A7CFD;
+    --width: 10px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -34,16 +36,16 @@ body {
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    margin-bottom: calc(7 * var(--width));
     max-width: 1440px;
-    height: 100vh;
     position: relative;
     .bg__image {
         position: absolute;
         top: 0;
         z-index: -1;
         width: 100%;
-        max-height: 300px;
-        min-height: 200px;
+        max-height: calc(30 * var(--width));
+        min-height: calc(20 * var(--width));
         overflow: hidden;
         display: flex;
         justify-content: center;
@@ -54,20 +56,20 @@ body {
         }
     }
     .todo__list {
-        width: 540px;
-        margin-top: 70px;
+        width: calc(54 * var(--width));
+        margin-top: calc(7 * var(--width));
         .todo__header {
             display: flex;
             justify-content: space-between;
             align-items: start;
-            height: 48px;
+            height: calc(4.8 * var(--width));
             .title {
                 font-family: 'Josefin Sans';
                 font-style: normal;
                 font-weight: 700;
-                font-size: 40px;
-                line-height: 40px;
-                letter-spacing: 15px;
+                font-size: calc(4 * var(--width));
+                line-height: calc(4 * var(--width));
+                letter-spacing: calc(1.5 * var(--width));
                 color: #FFFFFF;
             }
             .dark__white {
@@ -75,19 +77,20 @@ body {
             }
         }
         .create__todo {
-            height: 64px;
+            height: calc(6.4 * var(--width));
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            margin-top: 40px;
-            padding-left: 24px;
+            margin-top: calc(4 * var(--width));
+            padding-left: calc(2.4 * var(--width));
             background-color: var(--todo-item-color);
             box-shadow: var(--box-shadow);
             border-radius: 5px;
             .check__oval {
-                width: 24px;
-                height: 24px;
-                margin-right: 24px;
+                width: calc(2.4 * var(--width));
+                height: calc(2.4 * var(--width));
+                box-sizing: border-box;
+                margin-right: calc(2.4 * var(--width));
                 background: var(--todo-item-color);
                 border: 1px solid var(--border-color);
                 border-radius: 50%;
@@ -100,9 +103,9 @@ body {
                 font-family: 'Josefin Sans';
                 font-style: normal;
                 font-weight: 400;
-                font-size: 18px;
-                line-height: 18px;
-                letter-spacing: -0.25px;
+                font-size: calc(1.8 * var(--width));
+                line-height: calc(1.8 * var(--width));
+                letter-spacing: calc(-0.025 * var(--width));
                 color: var(--input-color);
                 background: var(--todo-item-color);
                 user-select: none;
@@ -110,54 +113,63 @@ body {
         }
         .todo__content {
             width: 100%;
-            max-height: 540px;
-            margin-top: 24px;
+            max-height: calc(54 * var(--width));
+            min-height: calc(20 * var(--width));
+            margin-top: calc(2.4 * var(--width));
+            padding-bottom: calc(6.4 var(--width));
             background: var(--todo-item-color);
             box-shadow: var(--box-shadow);
             border-radius: 5px;
-            overflow-y: auto;
-            overflow-x: hidden;
+            position: relative;
             &::-webkit-scrollbar {
                 display: none;
             }
             .content {
+                padding-bottom: calc(6.4 * var(--width));
+                border-radius: 5px 5px 0 0;
+                border-radius: 5px;
+                overflow-y: auto;
+                overflow-x: hidden;
                 .todo__item {
-                    width: 100%;
-                    height: 64px;
+                    width: calc(100% - calc(2.4 * var(--width)));
+                    // display: none !important;
+                    height: calc(6.4 * var(--width));
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
-                    padding-left: 24px;
+                    padding-left: calc(2.4 * var(--width));
                     background-color: var(--todo-item-color);
-                    border-bottom: 1px solid var(--border-color);
+                    border-bottom: calc(0.1 * var(--width)) solid var(--border-color);
                     cursor: pointer;
                     position: relative;
                     .todo__checkbox {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        margin-right: 25px;
+                        margin-right: calc(2.5 * var(--width));
                         cursor: pointer;
                         overflow: hidden;
                         position: relative;
-                        width: 25px;
-                        height: 25px;
+                        width: calc(2.5 * var(--width));
+                        height: calc( 2.5 * var(--width));
                         border-radius: 50%;
                         input {
                             display: none;
                         }
-                        .checked__bg {
+                        .label {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            width: 22px;
-                            height: 22px;
+                            width: calc(2.4 * var(--width));
+                            height: calc(2.4 * var(--width));
+                            box-sizing: border-box;
                             bottom: 0;
                             left: 0;
+                            cursor: pointer;
                             border-radius: 50%;
                             background-position: center center;
                             background-size: cover;
-                            border: 2px solid var(--border-color);
+                            border: calc(0.1 * var(--width)) solid var(--border-color);
                             // transition: 0.3s;
                             &:hover {
                                 background-image: url(../icons/Oval.svg);
@@ -165,7 +177,7 @@ body {
                                 border-color: transparent;
                             }
                         }
-                        input:checked+.checked__bg {
+                        input:checked+.label {
                             background: url(../icons/checked.svg);
                             background-position: center center;
                             background-size: cover;
@@ -179,8 +191,8 @@ body {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            width: 23px;
-                            height: 23px;
+                            width: calc(2.3 * var(--width));
+                            height: calc(2.3 * var(--width));
                             border-radius: 50%;
                         }
                         &:hover {
@@ -188,26 +200,27 @@ body {
                         }
                     }
                     .todo__text {
-                        margin-top: 5px;
+                        width: 75%;
+                        margin-top: calc(0.5 * var(--width));
                         font-family: 'Josefin Sans';
                         font-style: normal;
                         font-weight: 400;
-                        font-size: 18px;
-                        line-height: 18px;
-                        letter-spacing: -0.25px;
+                        font-size: calc(1.8 * var(--width));
+                        line-height: calc(1.8 * var(--width));
+                        letter-spacing: calc(-0.025 * var(--width));
                         color: var(--text-color);
                     }
                     .completed__todo {
                         // letter-spacing: -0.25px;
                         text-decoration-line: line-through;
-                        color: #D1D2DA;
+                        color: var(--checked-color);
                     }
                     .delete {
                         position: absolute;
-                        top: calc(50% - 9px);
-                        right: 48px;
-                        width: 18px;
-                        height: 18px;
+                        top: calc(50% - calc(0.9 * var(--width)));
+                        right: calc(2.4 * var(--width));
+                        width: calc(1.8 * var(--width));
+                        height: calc(1.8 * var(--width));
                         opacity: 0;
                         transition: .2s;
                         svg {
@@ -223,22 +236,26 @@ body {
                 }
             }
             .content__footer {
-                height: 64px;
+                position: absolute;
+                bottom: 0;
+                width: calc(100% - (4.8 * var(--width)));
+                height: calc(6.4 * var(--width));
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 0 24px;
+                padding: 0 calc(2.4 * var(--width));
                 background-color: var(--todo-item-color);
                 user-select: none;
+                border-radius: 0 0 5px 5px;
                 .content__number,
                 .clear {
                     font-family: 'Josefin Sans';
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 14px;
-                    line-height: 14px;
+                    font-size: calc(1.4 * var(--width));
+                    line-height: calc(1.4 * var(--width));
                     text-align: right;
-                    letter-spacing: -0.194444px;
+                    letter-spacing: calc(-0.0194444 * var(--width));
                     color: var(--footer-text-color);
                 }
                 .clear {
@@ -249,7 +266,7 @@ body {
                 }
                 .todo__categories {
                     display: grid;
-                    grid-gap: 18px;
+                    grid-gap: calc(1.8 * var(--width));
                     grid-template-columns: auto auto auto;
                     .all,
                     .active,
@@ -273,19 +290,59 @@ body {
                 }
             }
         }
+        .drop__to__reoder {
+            width: 100%;
+            margin-top: calc(5 * var(--width));
+            text-align: center;
+            font-family: 'Josefin Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: calc(1.4 * var(--width));
+            line-height: calc(1.4 * var(--width));
+            text-align: center;
+            letter-spacing: calc(-0.0194444 * var(--width));
+            color: var(--footer-text-color);
+        }
     }
-    .drop__to__reoder {
-        position: absolute;
-        bottom: 52px;
-        width: 100%;
-        text-align: center;
-        font-family: 'Josefin Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 14px;
-        text-align: center;
-        letter-spacing: -0.194444px;
-        color: var(--footer-text-color);
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*                                  Responsive                                 */
+
+
+/* -------------------------------------------------------------------------- */
+
+@media screen and (max-width:576px) {
+     :root {
+        --width: 8.5px;
+    }
+    .container {
+        .todo__list {
+            width: 95%;
+            .todo__header {
+                padding: 0 24px;
+            }
+            .todo__content {
+                .content__footer {
+                    border-radius: 0 0 5px 5px;
+                    .todo__categories {
+                        position: absolute;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        bottom: -64px;
+                        left: 0;
+                        width: 100%;
+                        background: var(--todo-item-color);
+                        box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+                        border-radius: 5px;
+                        height: 48px;
+                    }
+                }
+            }
+        }
     }
 }

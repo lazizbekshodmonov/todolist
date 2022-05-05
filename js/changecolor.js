@@ -24,6 +24,7 @@ changeColorBtn.addEventListener('click', () => {
         root.style.setProperty('--border-color', '#393A4B');
         root.style.setProperty('--hover-color', '#E3E4F1');
         root.style.setProperty('--footer-text-color', '#5B5E7E');
+        root.style.setProperty('--checked-color', '#4D5067');
         a = false;
     } else {
         changeColorBtn.childNodes[1].src = './icons/dark.svg';
@@ -38,6 +39,7 @@ changeColorBtn.addEventListener('click', () => {
         root.style.setProperty('--border-color', '#E3E4F1');
         root.style.setProperty('--hover-color', '#494C6B');
         root.style.setProperty('--footer-text-color', '#9495A5');
+        root.style.setProperty('--checked-color', '#D1D2DA');
         a = true;
     }
 });
