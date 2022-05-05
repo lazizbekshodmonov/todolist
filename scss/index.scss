@@ -197,6 +197,11 @@ body {
                         letter-spacing: -0.25px;
                         color: var(--text-color);
                     }
+                    .completed__todo {
+                        // letter-spacing: -0.25px;
+                        text-decoration-line: line-through;
+                        color: #D1D2DA;
+                    }
                     .delete {
                         position: absolute;
                         top: calc(50% - 9px);

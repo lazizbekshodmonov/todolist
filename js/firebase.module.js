@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
-import { getFirestore, doc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+import { getFirestore, doc, setDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCdfAbO-lLnl7jf0RYkDy_mJ9X2efAhNIc",
@@ -29,24 +29,21 @@ async function getCities(db) {
     loader.style.display = 'none';
     console.log(cityList);
     createDomElement(cityList);
+
 }
 
 getCities(db);
+checked();
 
 function createDomElement(data) {
     let todoContent = document.getElementById('todo__content');
 
     todoContent.innerHTML = '';
-
     data.forEach((element) => {
-
-        console.log(element.id);
-        console.log(element.todoitem);
-
         todoContent.innerHTML += `
             <li class="todo__item">
                 <label for="id_${element.id}" class="todo__checkbox">
-                    <input type="checkbox" id="id_${element.id}">
+                    <input type="checkbox" id="id_${element.id}" class="checkbox"/>
                     <span class="checked__bg">
                     </span>
                 </label>
@@ -62,6 +59,21 @@ function createDomElement(data) {
     });
 }
 
-function firebasePostData(data) {
 
+
+function checked() {
+    let todoContent = document.querySelector('#todo__content');
+    todoContent.addEventListener('click', (e) => {
+
+        console.log('error');
+        // let target = e.target,
+        //     targetText = target.parentNode.parentNode.childNodes[2].nextSibling,
+        //     input = target.parentNode.childNodes[1];
+        // console.log(target.parentNode.childNodes);
+        // if (input.checked) {
+        //     console.log(input.checked);
+        // } else {
+        //     console.log(input.checked);
+        // }
+    });
 }
