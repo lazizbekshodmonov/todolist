@@ -222,9 +222,15 @@ body {
                         width: calc(1.8 * var(--width));
                         height: calc(1.8 * var(--width));
                         opacity: 0;
-                        transition: .2s;
+                        border-radius: 50%;
+                        transition: 0.2s;
                         svg {
                             fill: var(--border-color);
+                            transition: 0.2s;
+                            &:hover{
+                                transition: 0.2s;
+                                transform: scale(1.2, 1.2);
+                            }
                         }
                     }
                     &:hover {
